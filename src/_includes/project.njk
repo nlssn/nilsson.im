@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<section>
+   <div class="container">
+
+      <div class="project-meta">
+
+         <h1>{{ title }}</h1>
+
+         {% if source.type == 'github'  %}
+            <p>Visit on GitHub</p>
+         {% else %}
+            <p>Visit on website</p>
+         {% endif%}
+      </div>
+
+      {{ content | safe }}
+   </div>
+</section>
