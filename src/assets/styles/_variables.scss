@@ -1,19 +1,18 @@
-/*$color-yellow: #fade5f;
-$color-red: #fc615c;
-$color-blue: #4dcce2;*/
-$color-white: #ffffff;
-$color-yellowish: #f8f7f4;
-$color-darkish: #dad7c8;
-$color-blue: #5ca16d;
-$color-darkgray: #dad9d8;
-$color-black: #252523;
+/* Colors */
 
-$color-notice: #eb9066;
+/* Fonts */
+$font-stack: "Inter", sans-serif;
 
-$font-stack: 'Source Code Pro', monospace;
-
+/* Layout */
 $breakpoints: (
-  'small':  767px,
-  'medium': 992px,
-  'large':  1200px
+  "small": 767px,
+  "medium": 992px,
+  "large": 1200px,
 ) !default;
+
+/* Spacing */
+$spacing-xs: 0.25em;
+$spacing-s: 0.5em;
+$spacing: 1em;
+$spacing-l: 2.5em;
+$spacing-xl: 3.5em;

@@ -4,37 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }} &middot; nilsson.im</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Code+Pro:wght@300;500;900&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">  
 	<link rel="stylesheet" href="{{ '/assets/styles/global.css' | url }}" />
 </head>
 <body>
-	<header class="site-header">
-		<div class="container">
-			<a href="/"><h1 class="logo">Johannes Nilsson</h1></a>
-			<nav class="site-nav">
-				<ul>
-					<li><a href="/#about">About</a></li>
-					<li><a href="#0" style="text-decoration: line-through;">Work</a></li>
-					<li><a href="#0" style="text-decoration: line-through;">Notes</a></li>
-					<li><a href="/#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<div class="site">
+		<header class="site-header">
+			<div class="container">
+				<div class="site-branding">
+					<a href="/">
+						<p>JN</p>
+					</a>
+				</div>
+				<nav class="nav-primary">
+					<a href="/" class="{{ 'active' if  page.url === '/' }}">work</a>
+					<a	href="/about" class="{{ 'active' if '/about' in page.url }}">About</a>
+					<a href="/notes" class="{{ 'active' if '/notes' in page.url }}">Notes</a>
+					<a href="/contact" class="{{ 'active' if '/contact' in page.url }}">contact</a>
+				</nav>
+			</div>
+		</header>
 
-	<main>
-	{{ content | safe }}
-	</main>
+		<main class="page-content">
+		{{ content | safe }}
+		</main>
 
-	<footer class="site-footer">
-		<div class="container">
-			<p>&copy; {% year %} {{ meta.siteName }} &middot; {{ meta.authorName }}</p>
-		</div>
-	</footer>
+		<footer class="site-footer">
+			<div class="container">
+				<p>johannes@nilsson.im</p>
+				<p>Colophon</p>
+			</div>
+		</footer>
 
-	<script src="{{ './assets/scripts/script.js' | url }}"></script>
+		<script src="{{ './assets/scripts/script.js' | url }}"></script>
+	</div>
 </body>
 </html>

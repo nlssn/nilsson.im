@@ -1,0 +1,13 @@
+---
+title: About me
+---
+
+<section>
+   <div class="container">
+      <h1>Notes</h1>
+      <p>Some random scribbles about web development, freelancing and keeping sane.</p>
+      {% for note in collections.notes %}
+         {{note.data.title}}
+      {% endfor %}
+   </div>
+</section>
