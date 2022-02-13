@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+
+<main class="site-content page">
+   {% if not url === '/' %}
+   <div class="container">
+      <h1>{{ title }}</h1>
+   </div>
+   {% endif %}
+
+   {{ content | safe }}
+</main>

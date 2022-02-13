@@ -2,6 +2,11 @@
 @import "variables";
 @import "mixins";
 
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+
 body {
   font-family: $font-stack;
   font-weight: 300;
@@ -15,7 +20,7 @@ h2 {
   color: black;
 }
 
-h1 {
+.introduction h1 {
   font-size: 2em;
   margin-bottom: $spacing-s;
 
@@ -32,6 +37,10 @@ h1 {
   }
 }
 
+h1 {
+  font-size: 2em;
+}
+
 h1,
 h2 {
   margin-bottom: $spacing-s;
@@ -42,8 +51,8 @@ h3 {
   margin-bottom: $spacing-s;
 }
 
-.page-content p {
-  line-height: 1.5;
+.site-content p {
+  line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
@@ -82,6 +91,7 @@ h3 {
 .site-header {
   grid-area: header;
   padding: $spacing-l 0;
+  font-size: 0.9em;
 
   .container {
     display: flex;
@@ -103,17 +113,25 @@ h3 {
   }
 }
 
-.page-content {
+.site-content {
   grid-area: main;
   padding: $spacing-l 0;
 }
 
+.site-content a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: lighten(black, 75);
+
+  &:hover {
+    color: $color-primary;
+    text-decoration-style: solid;
+    text-decoration-color: $color-primary;
+  }
+}
+
 .introduction {
   padding: $spacing-xl 0;
-
-  a:link {
-    color: rgb(62, 41, 247);
-  }
 
   .container {
     @include breakpoint("medium") {
@@ -149,23 +167,30 @@ h3 {
 }
 
 .site-footer {
+  color: lighten(black, 75);
+  font-size: 0.75em;
   padding: $spacing-l 0;
   grid-area: footer;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .active {
   font-weight: 500;
 }
 
-.read-more {
+a.read-more {
+  text-decoration: none;
+  background: transparent;
   display: inline-block;
-  color: black;
   font-size: 0.85em;
   font-weight: 500;
   border: 1px solid lighten(black, 90);
   border-radius: 0.55rem;
   padding: 0.7rem 0.95rem;
-  transition: ease-in-out 0.3s;
 
   .icon {
     height: 14px;
@@ -174,8 +199,8 @@ h3 {
 
   &:hover {
     color: white;
-    border: 1px solid rgb(62, 41, 247);
-    background: rgb(62, 41, 247);
+    border: 1px solid $color-primary;
+    background: $color-primary;
   }
 }
 
@@ -189,5 +214,13 @@ h3 {
 
   .meta p {
     margin-bottom: 0;
+  }
+}
+
+.presentation {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
   }
 }

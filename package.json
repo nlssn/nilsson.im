@@ -1,12 +1,12 @@
 {
-  "name": "akk",
+  "name": "nilsson.im",
   "version": "1.0.0",
-  "description": "Website for allakankoda.se",
+  "description": "Personal portfolio and blog",
   "main": "index.html",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch src/assets/styles:public/assets/styles",
+    "watch:sass": "sass --no-source-map --watch src/assets/styles:dist/assets/styles",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map src/assets/styles:public/assets/styles",
+    "build:sass": "sass --no-source-map src/assets/styles:dist/assets/styles",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy"
