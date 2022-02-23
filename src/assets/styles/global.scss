@@ -1,15 +1,15 @@
-@import 'reset';
-@import 'variables';
-@import 'mixins';
+@import "reset";
+@import "variables";
+@import "mixins";
 
 body {
   background-color: $color-yellowish;
   color: $color-black;
   font-family: $font-stack;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1em;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     font-size: 1.125em;
   }
 }
@@ -21,53 +21,57 @@ h1 {
   font-weight: 900;
   margin-bottom: 1.5rem;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     font-size: 3.5em;
   }
 }
 
 .logo {
-    display: block;
+  display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 35px;
   width: 35px;
   padding-top: 35px;
   overflow: hidden;
-  background: rgba(0,0,0,0)
-    url('../images/logo.png')
-    no-repeat;
+  background: rgba(0, 0, 0, 0) url("../images/logo.png") no-repeat;
   background-position: center center;
   background-size: contain;
   margin-bottom: 0;
 }
 
 h2 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 2em;
 
   &:after {
-    content: '';
+    content: "";
     background-color: lighten($color-blue, 30);
     width: 1ch;
-    height: .15em;
+    height: 0.15em;
     position: relative;
     bottom: 0;
+    top: 0.15em;
     display: block;
   }
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 1.2rem;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: $color-blue;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -78,15 +82,15 @@ p {
   display: inline-block;
 
   &:after {
-    content: '';
+    content: "";
     background: lighten($color-blue, 30);
     width: 102%;
-    height: .35em;
+    height: 0.35em;
     position: absolute;
     bottom: 5%;
     left: 0;
     z-index: -1;
-    transform: rotate(-.25deg);
+    transform: rotate(-0.45deg);
   }
 }
 
@@ -94,32 +98,32 @@ p {
   font-family: $font-stack;
   background-color: $color-blue;
   color: $color-white;
-  padding: .75em 1em;
+  padding: 0.75em 1em;
   cursor: pointer;
-  font-size: .9em;
+  font-size: 0.9em;
   display: inline-block;
   border: 2px solid $color-blue;
-  transition: all .5s;
+  transition: all 0.5s;
 
   &:hover {
-    background-color: $color-white;
+    background-color: transparent;
     color: $color-blue;
   }
 }
 
 .btn-small {
-  font-size: .9em;
-  padding: .5em .75em;
+  font-size: 0.9em;
+  padding: 0.5em 0.75em;
 }
 
 .about > .container {
   display: grid;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     justify-content: space-between;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     align-items: center;
   }
 }
@@ -129,26 +133,23 @@ img.profile {
   margin: 0 auto;
   margin-bottom: 3em;
   transform: rotate(1.5deg);
-  border: .5em solid $color-white;
-  box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.024),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.038),
-    0 12.5px 10px rgba(0, 0, 0, 0.03),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
-  ;
+  border: 0.5em solid $color-white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.024),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.038), 0 12.5px 10px rgba(0, 0, 0, 0.03),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042);
 
   grid-row: 1;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     max-width: 80%;
     grid-column: 1 / 2;
     margin-bottom: 0;
-    margin-left: -.025rem;
+    margin-left: -0.025rem;
   }
 }
 
 .about-description {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     grid-column: 2 / 3;
   }
 }
@@ -157,11 +158,11 @@ section {
   padding: 4rem 0;
   border-bottom: 1px solid $color-darkish;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 6rem 0;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 12rem 0;
   }
 }
@@ -169,7 +170,7 @@ section {
 .container {
   margin: 0 8%;
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     margin: 0 auto;
     max-width: 1000px;
   }
@@ -178,11 +179,11 @@ section {
 .site-header {
   margin-top: 8%;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin-top: 5%;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-top: 2%;
   }
 }
@@ -191,7 +192,7 @@ section {
   display: flex;
   justify-content: space-between;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     align-items: center;
   }
 }
@@ -199,27 +200,27 @@ section {
 .site-nav {
   text-transform: lowercase;
   text-align: right;
-  font-size: .9em;
+  font-size: 0.9em;
 
   ul {
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       display: flex;
     }
   }
 
   ul li a {
     display: inline-block;
-    padding: .2rem;
+    padding: 0.2rem;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding: 1rem;
     }
   }
 }
 
 .site-footer {
-  font-size: .75em;
-  
+  font-size: 0.75em;
+
   background-color: $color-black;
   margin: 0;
   padding-top: 2rem;
@@ -246,19 +247,24 @@ section {
   pointer-events: auto;
   content: "";
   background-color: none;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .stretched-link:hover::after {
-  content: 'Visit';
+  content: "Visit";
   background-color: rgba($color-blue, 0.75);
 }
 
 p > a {
+  color: $color-blue;
+  font-weight: 300;
   text-decoration: underline;
-  text-decoration-thickness: .125em;
+  text-decoration-thickness: 2px;
 
-  text-decoration-skip-ink: auto;
+  &:hover {
+    background-color: $color-blue;
+    color: $color-white;
+  }
 }
 
 .hero {
@@ -268,25 +274,23 @@ p > a {
 }
 
 .hero .container {
+  max-width: 45ch;
 
-
+  @include breakpoint("small") {
     max-width: 45ch;
+    margin: 0 auto;
+  }
 
-    @include breakpoint('small') {
-      max-width: 45ch;
-      margin: 0 auto;
-    }
-
-    @include breakpoint('medium') {
-      max-width: 60ch;
-    }
+  @include breakpoint("medium") {
+    max-width: 70ch;
+  }
 }
 
 .social-links {
   display: flex;
 
   li > a {
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1.25em;
   }
 
@@ -302,26 +306,21 @@ p > a {
 
   margin-bottom: 4em;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin-bottom: 4em;
     grid-template-columns: 1fr 1fr;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 6em;
-    gap: 4em;
+    gap: 2.5em;
   }
-
-
 }
 
 .featured-item {
-  box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.024),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.038),
-    0 12.5px 10px rgba(0, 0, 0, 0.03),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
-  ;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.024),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.038), 0 12.5px 10px rgba(0, 0, 0, 0.03),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042);
 }
 
 .featured-item__header {
@@ -331,13 +330,13 @@ p > a {
   align-items: center;
   border-radius: 5px 5px 0 0;
 
-  padding: .35rem .75rem;
+  padding: 0.35rem 0.75rem;
 
   p {
     font-family: $font-stack;
     font-weight: 500;
     text-transform: lowercase;
-    font-size: .75em;
+    font-size: 0.75em;
     margin-bottom: 0;
   }
 }
@@ -350,7 +349,7 @@ p > a {
 .featured-item__footer {
   background-color: $color-blue;
   border-radius: 0 0 5px 5px;
-  height: .5rem;
+  height: 0.5rem;
 }
 
 .work-more {
@@ -361,9 +360,9 @@ p > a {
   display: grid;
   justify-content: center;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     display: grid;
-    grid-template-columns: .75fr 1.25fr;
+    grid-template-columns: 0.75fr 1.25fr;
     gap: 4rem;
   }
 }
@@ -372,13 +371,14 @@ p > a {
   width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   margin-bottom: 1.25rem;
-  padding: .75rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: .85em;
-  border: 1px solid $color-darkish;
+  padding: 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85em;
+  border: 1px solid $color-darkest;
   border-radius: 5px;
   background-color: $color-white;
 
@@ -394,15 +394,15 @@ textarea {
 
 label {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .notice {
   background-color: $color-notice;
   color: $color-white;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
-  font-size: .7em;
+  font-size: 0.7em;
 
   p {
     margin: 0;
