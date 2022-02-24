@@ -67,7 +67,7 @@ h6 {
 a:hover,
 a:active {
   color: $color-blue;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 p {
@@ -103,7 +103,8 @@ p {
   font-size: 0.9em;
   display: inline-block;
   border: 2px solid $color-blue;
-  transition: all 0.5s;
+  transition: all 0.2s;
+  font-weight: 500;
 
   &:hover {
     background-color: transparent;
@@ -201,6 +202,7 @@ section {
   text-transform: lowercase;
   text-align: right;
   font-size: 0.9em;
+  font-weight: 500;
 
   ul {
     @include breakpoint("small") {
@@ -247,7 +249,7 @@ section {
   pointer-events: auto;
   content: "";
   background-color: none;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 .stretched-link:hover::after {
@@ -259,11 +261,11 @@ p > a {
   color: $color-blue;
   font-weight: 300;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-style: dotted;
 
   &:hover {
-    background-color: $color-blue;
-    color: $color-white;
+    text-decoration-style: solid;
+    color: $color-black;
   }
 }
 
@@ -395,6 +397,7 @@ textarea {
 label {
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .notice {
