@@ -307,15 +307,13 @@ p > a {
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  margin-bottom: 4em;
+  margin-top: 2em;
 
   @include breakpoint("small") {
-    margin-bottom: 4em;
     grid-template-columns: 1fr 1fr;
   }
 
   @include breakpoint("medium") {
-    margin-bottom: 6em;
     gap: 2.5em;
   }
 }
