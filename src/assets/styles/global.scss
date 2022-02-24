@@ -279,12 +279,12 @@ p > a {
   max-width: 45ch;
 
   @include breakpoint("small") {
-    max-width: 45ch;
+    max-width: 50ch;
     margin: 0 auto;
   }
 
   @include breakpoint("medium") {
-    max-width: 70ch;
+    max-width: 68ch;
   }
 }
 
