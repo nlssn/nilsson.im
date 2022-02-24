@@ -5,16 +5,22 @@ layout: base.njk
    <div class="container">
 
       <div class="project-meta">
-
          <h1>{{ title }}</h1>
-
-         {% if source.type == 'github'  %}
-            <p>Visit on GitHub</p>
-         {% else %}
-            <p>Visit on website</p>
-         {% endif%}
       </div>
 
-      {{ content | safe }}
+      <div class="project-image">
+         <img src="{{images[1]}}" alt="">
+      </div>
+
+      <div class="project-content">
+         {{ content | safe }}
+
+         <div class="project-link">
+            <p><a class="btn" href="{{ links[0].url}}">{{ links[0].title }}</a></p>
+         </div>
+      </div>
+
+
+      
    </div>
 </section>
