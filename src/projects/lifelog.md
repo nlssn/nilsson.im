@@ -2,7 +2,7 @@
 title: "Lifelog"
 description: "En bloggportal för träningsglada själar, skriven i PHP"
 links:
-  - { title: "Se koden på GitLab", url: "#0" }
+  - { title: "Se koden på GitLab", url: "https://gitlab.com/nlssn/lifelog" }
 images:
   - "/assets/images/lifelog_thumb.png"
   - "/assets/images/lifelog1.png"
