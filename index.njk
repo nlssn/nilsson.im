@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<div class="intro">
+  <img src="/assets/images/johannes.webp" alt="Johannes Nilsson" width="350px" height="350px">
+
+  <div class="intro-content">
+    <h1>Hello there!</h1>
+    
+    <div class="flow">
+      <p>My name is Johannes. I'm a web developer from Sweden.</p>
+      
+      <p>On this page you'll find random thoughts and updates about stuff I do.</p>
+      
+      <p>Feel free to <a href="mailto:johannes@nilsson.im">send me an email</a>, if you want to collab on a cool project or just talk.</p>
+    </div>
+  </div>
+
+</div>
+
+<ul class="post-list">
+  {%- for post in collections.notes | reverse -%}
+  <li>
+    <article {% if post.data.type %}class="type-{{ post.data.type }}"{% endif %}>
+      <div class="content flow">{{ post.content | safe }}</div>
+      <p class="post-meta">Posted on {{ post.date | postDate }}</p>
+    </article>
+  </li>
+  {%- endfor -%}
+</ul>

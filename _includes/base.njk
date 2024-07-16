@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nilsson.im</title>
+    <meta name="description" content="My home on the web, where I share my thoughts and show off projects.">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #18270f;
+        background-color: #fbfbfb;
+        line-height: 1.5;
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+        transition: 0.25s ease-in-out;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #5b8443;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .content-wrap {
+        display: grid;
+        padding: clamp(2rem, 5%, 5rem) 3%;
+        margin: 0 auto;
+        gap: 1.5rem;
+        min-height: 0; /* NEW */
+        min-width: 0; /* NEW; needed for Firefox */
+      }
+
+      .post-list {
+        list-style: none;
+      }
+
+      .post-list li {
+        padding: 1.75rem 2rem;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+      }
+
+      .post-list li:has(article.type-image) {
+        padding: 0;
+        overflow: hidden;
+
+        .post-meta {
+          padding: 1.75rem 2rem;
+        }
+      }
+
+      .post-list li + li {
+        margin-top: 1.75rem;
+      }
+
+      .post-list .content a,
+      .intro a {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      b,
+      strong {
+        font-weight: 700;
+      }
+
+      .flow > * + * {
+        margin-top: 1em;
+      }
+
+      .intro {
+        font-size: 0.825rem;
+        font-weight: 400;
+        font-family: sans-serif;
+        border-radius: 10px;
+        height: fit-content;
+        display: flex;
+        align-items: start;
+      }
+
+      .intro h1 {
+        font-family: "Sentient-Variable", serif;
+        font-size: 1.45rem;
+        margin-bottom: 0.25em;
+        font-weight: 800;
+      }
+
+      .intro img {
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+        max-width: 125px;
+        margin-right: 1.25rem;
+      }
+
+      @media (min-width: 1000px) {
+        .intro {
+          display: initial;
+        }
+
+        .intro img {
+          max-width: initial;
+        }
+
+        .intro-content {
+          margin-top: 1rem;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        body {
+          font-size: 19px;
+        }
+
+        .content-wrap {
+          padding-inline: 0;
+          max-width: 980px;
+          grid-template-columns: 245px auto;
+          gap: 2.5rem;
+        }
+
+        .intro {
+          position: sticky;
+          top: 2rem;
+        }
+      }
+
+      ::-moz-selection {
+        /* Code for Firefox */
+        color: #fff;
+        background: #5b8443;
+      }
+
+      ::selection {
+        color: #fff;
+        background: #5b8443;
+      }
+
+      body {
+        font-family: "Sentient-Variable", serif;
+      }
+
+      .post-meta {
+        font-size: 0.7em;
+        letter-spacing: 0.0125rem;
+        color: #575757;
+        margin-top: 1.75em;
+        font-family: sans-serif;
+        font-style: italic;
+      }
+    </style>
+    <link rel="preload" href="/assets/css/sentient.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!--<link rel="preload" href="/assets/css/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
+    <noscript>
+      <link href="/assets/css/sentient.css" rel="stylesheet">
+      <!--<link href="/assets/css/global.css" rel="stylesheet">-->
+    </noscript>
+  </head>
+  <body>
+    <div class="content-wrap">
+        {{ content | safe }}
+    </div>
+  </body>
+</html>
