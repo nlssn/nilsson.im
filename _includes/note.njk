@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+<article>
+  <div class="meta flow">
+      {% if title %}
+      <h1>{{ title }}</h1>
+      {% endif %}
+  </div>
+  
+  <div class="content flow">{{ content | safe }}</div>
+  <p class="post-meta">{{ page.date | postDate }}</p>
+</article>
